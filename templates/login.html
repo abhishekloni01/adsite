@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block style %}
+    
+        .form{
+            margin:auto;
+            text-align:center;
+            width:300px;
+        }
+
+        input{
+            padding:5px;
+            margin-top:5px;
+        }
+
+{% endblock style %}
+
+{% block content %}
+   <div class="form">
+         <h1>Login</h1>
+    <form action="" method="post">
+    {% csrf_token %}
+        <input  type="text" name="First_name" placeholder="First name"><br>
+        <input type="text" name="Middle_name" placeholder="Middle name"><br>
+        <input type="text" name="Last_name" placeholder="Last name"><br>
+        <input type="text" name="Middle_name" placeholder="Middle name"><br>
+        <input type="submit" value="Login">
+    </form>
+    <a href="{% url 'home' %} ">Back to home</a>
+   </div>
+
+
+   
+{% endblock content %}

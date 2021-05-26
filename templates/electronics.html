@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% static 'images' as imgurl %}
+
+        <div id="why" class="why">
+         <div class="container">
+            
+
+            <div class="row" >
+            {% for i in list %}
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div id="box_ho" class="why-box">
+                    {% if i.offer %}
+                         <a class="read_more bg" href="#">Special Offer</a>
+                     {% else %}
+                         <a class="read_more bg" href="#">No Offer</a>
+                     {% endif %}
+                     <i><img src="{{imgurl}}/{{i.img}}" alt="#" /></i>
+                     <h3>{{i.title}}</h3>
+                     <p>{{i.desc}}</p>
+                        
+                  </div>
+                 
+               </div>
+            {% endfor %}
+
+            </div>
+         </div>
+      </div>
+    
+
+    
+
+{% endblock content %}

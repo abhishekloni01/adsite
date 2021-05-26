@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    .container
+    {
+        margin:0 auto;
+        width:400px;
+        margin-top:20px;
+    }
+
+{% endblock style %}
+{% block content %}
+    <div class="container">
+        <form action="delete" method="post">
+        {% csrf_token %}
+        <input type="text" name="empid" placeholder="Emp id" required><br>
+        <input type="submit" value="Delete">
+    </form>
+     <a href="{% url 'home' %}">Back to home</a>
+    </div>
+{% endblock content %}
+

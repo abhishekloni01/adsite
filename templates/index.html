@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
+
+   {% static 'images' as imgUrl %}
+      
+      <!-- banner -->
+      <section class="banner_main">
+         <div class="container">
+            <div class="row d_flex">
+               <div class="col-md-5">
+                  <div class="text-bg">
+                     <h1>{{banner1.htag}} </h1>
+                     <span>Blog Page</span>
+                     <p>{{banner1.para}}</p>
+                     <a href="#">Get Started</a>
+                  </div>
+               </div>
+               <div class="col-md-7">
+                  <div class="text-img">
+                     <figure><img src="{{imgUrl}}/{{banner1.img}}" /></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end banner -->
+      <!-- Hosting -->
+      <div id="" class="hosting">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>{{title.htag}}</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="web_hosting">
+                     <figure><img  src="{{imgUrl}}/{{title.img}}" alt="#"/></figure>
+                     <p>{{title.para}}</p>
+                     <a href="#">Read more</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end Hosting -->
+      <!-- Services  -->
+      <div id="service" class="Services">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Best Services</h2>
+                     <p>.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+
+            {% for i in bestlist %}
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="Services-box">
+                     <i><img src="{{imgUrl}}/{{i.img}}" alt="#" /></i>
+                     <h3> {{i.htag}}</h3>
+                     <p>{{i.para}}</p>
+                  </div>
+               </div>
+            {% endfor %}
+               </h3>
+                     <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
+                  </div>
+               </div> 
+               <a class="read_more" href="#">Read More</a>
+            </div>
+         </div>
+      </div>
+      <!-- end Servicess -->
+      <!-- why -->
+      <div id="why" class="why">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>{{whattitle.htag}} </h2>
+                     <p> {{whattitle.para}} </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+            {% for i in myclass %}
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div id="box_ho" class="why-box">
+                     <i><img src="{{imgUrl}}/{{i.img}}" alt="#" /></i>
+                     <h3>{{i.name}}</h3>
+                     <p>{{i.desc}}</p>
+                  </div>
+                  <a class="read_more bg" href="#">Read More</a>
+               </div>
+            {% endfor %}
+
+            </div>
+         </div>
+      </div>
+      <!-- end why -->
+      <!-- contact -->
+      <div id="contact" class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 offset-md-3 ">
+                  <form class="main_form">
+                     <div class="row">
+                        <div class="col-sm-12">
+                           <input class="contactus" placeholder="Name" type="text" name="Name">
+                        </div>
+                        <div class="col-sm-12">
+                           <input class="contactus" placeholder="Email" type="text" name=" Email">
+                        </div>
+                        <div class="col-sm-12">
+                           <input class="contactus" placeholder="Phone" type="text" name="Phone">
+                        </div>
+                        <div class="col-sm-12">
+                           <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                        </div>
+                        <div class="col-sm-12">
+                           <button class="send">Send</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- end contact -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-10 offset-md-1">
+                     <div class="cont">
+                        <h3>Contact now</h3>
+                        <span>My Cart Help Center | 24x7 Customer Care Support</span>
+                        <p> 
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2019 All Rights Reserved. <a href="https://html.design/">My Cart</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+{% endblock content %}
+    
+      
+

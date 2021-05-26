@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% load static %}
+    {% block title %}Register{% endblock title %}
+
+    {% block style %}
+        .container{
+            margin:auto;
+            text-align:center;
+            width:300px;
+        }
+
+        input{
+            padding:5px;
+            margin-top:5px;
+        }
+   {% endblock style %}
+
+{% block content %}
+    <div class="container">
+        <h1>Register</h1>
+    <form action="register" method="post">
+    {% csrf_token %}
+        <input type="text" name="firstname" placeholder="First name"><br>
+        <input type="text" name="middlename" placeholder="Middle name"><br>
+        <input type="text" name="lastname" placeholder="Last name"><br>
+        <input type="text" name="empid" placeholder="Emp id"><br>
+        <input type="number" name="mobile" placeholder="Ph no"><br>
+        <input type="text" name="address" placeholder="address"><br>
+        <input type="text" name="position" placeholder="Position"><br>
+        <input type="submit" value="Register">
+    </form>
+    <a href="{% url 'home' %}">Back to home</a>
+    </div>
+
+    
+{% endblock content %}

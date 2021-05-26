@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+ {% block title %}
+  Employees
+ {% endblock title %}
+
+ {% block style %}
+    .container{
+      margin:auto;
+      text-align:center;
+      width:1200px;
+    }
+
+ {% endblock style %}
+
+ {% block content %}
+  <div class="container">
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Middle Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Empid</th>
+      <th scope="col">Address</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Position</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in employees %}
+    <tr>
+      <th scope="row">{{i.empid}}</th>
+      <td>{{i.fname}}</td>
+      <td>{{i.mname}}</td>
+      <td>{{i.lname}}</td>
+      <td>{{i.empid}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.mobile}}</td>
+      <td>{{i.position}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+
+</table>
+  </div>
+ {% endblock content %}
